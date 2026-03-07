@@ -1,0 +1,76 @@
+/* The Main Background */
+.root {
+    -fx-background-color: #121212;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+/* Sleek, Rounded Buttons */
+.button {
+    -fx-background-color: #7C3AED; /* Vibrant electric purple */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 8px; /* Smooth rounded corners */
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #5B21B6; /* Darker purple on hover */
+}
+
+.button:disabled {
+    -fx-background-color: #333333;
+    -fx-text-fill: #888888;
+}
+
+/* Dark Mode Table */
+.table-view {
+    -fx-background-color: #1E1E1E;
+    -fx-border-color: #333333;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #2D2D2D;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: transparent;
+    -fx-size: 35px;
+}
+
+.table-view .table-cell {
+    -fx-text-fill: #E0E0E0;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #252525;
+}
+.table-row-cell:even {
+    -fx-background-color: #1E1E1E;
+}
+
+/* Modern Chart Styling */
+.chart-title {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.axis-label {
+    -fx-text-fill: #AAAAAA;
+}
+
+.chart-horizontal-grid-lines, .chart-vertical-grid-lines {
+    -fx-stroke: #333333;
+}
+
+.chart-series-line {
+    -fx-stroke-width: 2px;
+}
+
+/* Custom Line Colors */
+.default-color0.chart-series-line { -fx-stroke: #10B981; } /* Emerald Green for Actual Price */
+.default-color1.chart-series-line { -fx-stroke: #F59E0B; } /* Amber for SMA / Prediction */
