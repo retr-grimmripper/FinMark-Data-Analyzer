@@ -71,6 +71,14 @@
     -fx-stroke-width: 2px;
 }
 
-/* Custom Line Colors */
-.default-color0.chart-series-line { -fx-stroke: #10B981; } /* Emerald Green for Actual Price */
-.default-color1.chart-series-line { -fx-stroke: #F59E0B; } /* Amber for SMA / Prediction */
+/* --- CHART LEGEND & LINE COLORS --- */
+
+/* Series 1: Actual Price (Emerald Green) */
+.default-color0.chart-series-line { -fx-stroke: #10B981; }
+.default-color0.chart-line-symbol { -fx-background-color: #10B981, white; }
+.chart-legend-item-symbol.default-color0 { -fx-background-color: #10B981; }
+
+/* Series 2: AI Predicted Trend (Amber) */
+.default-color1.chart-series-line { -fx-stroke: #F59E0B; }
+.default-color1.chart-line-symbol { -fx-background-color: #F59E0B, white; }
+.chart-legend-item-symbol.default-color1 { -fx-background-color: #F59E0B; }

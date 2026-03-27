@@ -13,7 +13,7 @@ public class HelloApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 900, 700);
 
-        java.net.URL cssUrl = getClass().getResource("/css/styles.css");
+        java.net.URL cssUrl = getClass().getResource("/css/dark-theme.css");
         if (cssUrl != null) {
             scene.getStylesheets().add(cssUrl.toExternalForm());
         }

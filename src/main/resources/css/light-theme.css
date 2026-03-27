@@ -1,0 +1,79 @@
+/* The Main Background - LIGHT MODE */
+.root {
+    -fx-background-color: #F3F4F6;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+/* Sleek, Rounded Buttons */
+.button {
+    -fx-background-color: #2563EB; /* Bright Blue */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #1D4ED8;
+}
+
+.button:disabled {
+    -fx-background-color: #D1D5DB;
+    -fx-text-fill: #9CA3AF;
+}
+
+/* Light Mode Table */
+.table-view {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #E5E7EB;
+}
+
+.table-view .table-cell {
+    -fx-text-fill: #1F2937;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #F9FAFB;
+}
+.table-row-cell:even {
+    -fx-background-color: #FFFFFF;
+}
+
+/* Modern Chart Styling */
+.chart-title {
+    -fx-text-fill: #111827;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.axis-label {
+    -fx-text-fill: #4B5563;
+}
+
+.chart-horizontal-grid-lines, .chart-vertical-grid-lines {
+    -fx-stroke: #E5E7EB;
+}
+
+.chart-series-line {
+    -fx-stroke-width: 2px;
+}
+
+/* --- CHART LEGEND & LINE COLORS --- */
+
+/* Series 1: Actual Price (Emerald Green) */
+.default-color0.chart-series-line { -fx-stroke: #10B981; }
+.default-color0.chart-line-symbol { -fx-background-color: #10B981, white; }
+.chart-legend-item-symbol.default-color0 { -fx-background-color: #10B981; }
+
+/* Series 2: AI Predicted Trend (Amber) */
+.default-color1.chart-series-line { -fx-stroke: #F59E0B; }
+.default-color1.chart-line-symbol { -fx-background-color: #F59E0B, white; }
+.chart-legend-item-symbol.default-color1 { -fx-background-color: #F59E0B; }
