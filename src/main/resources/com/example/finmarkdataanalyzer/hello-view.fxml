@@ -1,41 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Priority?>
 <?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" spacing="15.0" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finmarkdataanalyzer.HelloController">
+<BorderPane prefHeight="800" prefWidth="1200" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finmarkdataanalyzer.HelloController">
 
-    <HBox alignment="CENTER_LEFT" spacing="15.0" style="-fx-padding: 10px 20px;">
-        <Button fx:id="loadDataBtn" text="Load Data" />
-        <Button fx:id="runModelBtn" text="Run AI Analysis" />
-        <Button fx:id="exportBtn" text="Export Results" />
-        <Button fx:id="resetBtn" text="Reset" />
+    <left>
+        <VBox prefWidth="240" spacing="10" style="-fx-background-color: #1F2937; -fx-padding: 20px;">
+            <Label text="FinMark Terminal" textFill="WHITE">
+                <font><Font name="System Bold" size="22" /></font>
+                <VBox.margin><Insets bottom="30" /></VBox.margin>
+            </Label>
 
-        <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="navDashboardBtn" maxWidth="Infinity" style="-fx-background-color: #374151; -fx-text-fill: white; -fx-alignment: BASELINE_LEFT; -fx-padding: 12px; -fx-font-size: 14px; -fx-cursor: hand;" text="🏠 Dashboard" />
+            <Button fx:id="navCryptoBtn" maxWidth="Infinity" style="-fx-background-color: transparent; -fx-text-fill: #9CA3AF; -fx-alignment: BASELINE_LEFT; -fx-padding: 12px; -fx-font-size: 14px; -fx-cursor: hand;" text="₿ Cryptocurrencies" />
+            <Button fx:id="navStocksBtn" maxWidth="Infinity" style="-fx-background-color: transparent; -fx-text-fill: #9CA3AF; -fx-alignment: BASELINE_LEFT; -fx-padding: 12px; -fx-font-size: 14px; -fx-cursor: hand;" text="📈 Stocks" />
+            <Button fx:id="navMineralsBtn" maxWidth="Infinity" style="-fx-background-color: transparent; -fx-text-fill: #9CA3AF; -fx-alignment: BASELINE_LEFT; -fx-padding: 12px; -fx-font-size: 14px; -fx-cursor: hand;" text="⛏ Minerals &amp; Forex" />
 
-        <Button fx:id="chartToggleBtn" text="📊 Candlestick View" />
-        <Button fx:id="expandChartBtn" text="🗖 Full Screen Chart" />
-        <Button fx:id="themeToggleBtn" text="☀️ Light Mode" style="-fx-background-color: #374151; -fx-text-fill: #FBBF24;" />
-    </HBox>
+            <Label text="TOOLS" textFill="#6b7280">
+                <font><Font name="System Bold" size="12" /></font>
+                <VBox.margin><Insets top="20" bottom="5" /></VBox.margin>
+            </Label>
 
-    <Label fx:id="metricsLabel" text="AI Confidence Metrics will appear here..." style="-fx-font-weight: bold; -fx-font-size: 14px;" />
+            <Button fx:id="navNewsBtn" maxWidth="Infinity" style="-fx-background-color: transparent; -fx-text-fill: #9CA3AF; -fx-alignment: BASELINE_LEFT; -fx-padding: 12px; -fx-font-size: 14px; -fx-cursor: hand;" text="📰 News &amp; Sentiment" />
+            <Button fx:id="navOfflineBtn" maxWidth="Infinity" style="-fx-background-color: transparent; -fx-text-fill: #9CA3AF; -fx-alignment: BASELINE_LEFT; -fx-padding: 12px; -fx-font-size: 14px; -fx-cursor: hand;" text="📁 Offline Analysis" />
+            <Region VBox.vgrow="ALWAYS" />
+            <Button fx:id="navSettingsBtn" maxWidth="Infinity" style="-fx-background-color: transparent; -fx-text-fill: #9CA3AF; -fx-alignment: BASELINE_LEFT; -fx-padding: 12px; -fx-font-size: 14px; -fx-cursor: hand;" text="⚙ Settings" />
+        </VBox>
+    </left>
 
-    <TableView fx:id="dataTable" prefHeight="250.0" VBox.vgrow="ALWAYS" />
+    <center>
+        <StackPane fx:id="contentArea" style="-fx-background-color: #111827;">
 
-    <LineChart fx:id="stockChart" title="Stock Trend and Predictions" VBox.vgrow="ALWAYS">
-        <xAxis>
-            <CategoryAxis label="Date" side="BOTTOM" />
-        </xAxis>
-        <yAxis>
-            <NumberAxis label="Price" side="LEFT" />
-        </yAxis>
-    </LineChart>
-</VBox>
+            <VBox fx:id="dashboardView" alignment="CENTER" spacing="15" style="-fx-background-color: transparent;">
+                <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-padding: 10px 20px;">
+                    <Button fx:id="loadDataBtn" text="Load Data" />
+                    <Button fx:id="fetchLiveBtn" style="-fx-background-color: #10B981; -fx-text-fill: white;" text="🌐 Fetch Live Data" />
+                    <Button fx:id="runModelBtn" text="Run AI Analysis" />
+                    <Button fx:id="exportBtn" text="Export Results" />
+                    <Button fx:id="resetBtn" text="Reset" />
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button fx:id="chartToggleBtn" text="📊 Candlestick View" />
+                    <Button fx:id="expandChartBtn" text="🗖 Full Screen Chart" />
+                    <Button fx:id="themeToggleBtn" style="-fx-background-color: #374151; -fx-text-fill: #FBBF24;" text="☀️ Light Mode" />
+                </HBox>
+
+                <HBox alignment="CENTER" spacing="20">
+                    <Label fx:id="metricsLabel" style="-fx-text-fill: #9CA3AF; -fx-font-size: 14px;" text="AI Confidence Metrics will appear here..." />
+                    <Label fx:id="rsiLabel" style="-fx-font-weight: bold; -fx-font-size: 18px; -fx-text-fill: #3B82F6;" text="RSI: --" />
+                    <Label fx:id="signalLabel" style="-fx-font-weight: bold; -fx-font-size: 20px; -fx-text-fill: #6B7280;" text="TRADING SIGNAL: AWAITING DATA" />
+                </HBox>
+
+                <HBox alignment="CENTER" spacing="15" style="-fx-padding: 15px; -fx-background-color: #1F2937; -fx-background-radius: 8px; -fx-margin: 0 20px 0 20px;">
+                    <Label fx:id="portfolioLabel" style="-fx-text-fill: #FBBF24; -fx-font-weight: bold; -fx-font-size: 16px;" text="💰 Cash: $10,000.00  |  📦 Owned: 0  |  📈 Total Value: $10,000.00" />
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Label text="Qty:" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;" />
+                    <TextField fx:id="tradeQuantityField" text="1" prefWidth="60" style="-fx-background-color: #374151; -fx-text-fill: white; -fx-font-weight: bold; -fx-alignment: CENTER;" />
+                    <Button fx:id="executeBuyBtn" style="-fx-background-color: #10B981; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-cursor: hand;" text="🟢 BUY" />
+                    <Button fx:id="executeSellBtn" style="-fx-background-color: #EF4444; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-cursor: hand;" text="🔴 SELL" />
+                </HBox>
+
+                <TableView fx:id="dataTable" prefHeight="250" VBox.vgrow="ALWAYS" />
+                <LineChart fx:id="stockChart" title="Market Trend &amp; AI Predictions" VBox.vgrow="ALWAYS">
+                    <xAxis><CategoryAxis label="Date" side="BOTTOM" /></xAxis>
+                    <yAxis><NumberAxis label="Price" side="LEFT" /></yAxis>
+                </LineChart>
+            </VBox>
+
+        </StackPane>
+    </center>
+</BorderPane>

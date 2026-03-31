@@ -18,7 +18,6 @@ public class HelloApplication extends Application {
             scene.getStylesheets().add(cssUrl.toExternalForm());
         }
 
-        // Add the custom window icon
         try {
             stage.getIcons().add(new javafx.scene.image.Image(getClass().getResourceAsStream("/icon.png")));
         } catch (Exception e) {
